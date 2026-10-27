@@ -2,7 +2,11 @@
 <html lang="zh-CN">
 <head>
   <meta charset="UTF-8" />
-  <script>document.documentElement.classList.add("poster-loading");</script>
+  <script>
+    // 旧海报地址直接打开或刷新时，回到网站起点。
+    if (window.self === window.top) window.location.replace("./");
+    document.documentElement.classList.add("poster-loading");
+  </script>
   <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
   <meta name="theme-color" content="#54b0dc" />
   <title>Join us · 招募海报</title>
@@ -71,7 +75,7 @@
     <img class="poster-label" src="assets/poster-label-3.webp" alt="" aria-hidden="true" style="left:14.95968%;top:70.52452%;width:17.41935%;height:4.41847%;--period:3.29s;--delay:-1.83s" />
     <img class="poster-label" src="assets/poster-label-4.webp" alt="" aria-hidden="true" style="left:24.47581%;top:52.25200%;width:22.41935%;height:4.38997%;--period:3.52s;--delay:-2.44s" />
     <img class="poster-label" src="assets/poster-label-5.webp" alt="" aria-hidden="true" style="left:62.37903%;top:59.92018%;width:22.25806%;height:4.41847%;--period:3.75s;--delay:-3.05s" />
-    <a class="weibo-link" href="https://weibo.com/u/4026392634"
+    <a class="weibo-link" href="https://weibo.com/u/4026392634" target="_top"
       aria-label="访问 @全职研究日韩情侣的前世今生 的微博主页"
       title="访问 @全职研究日韩情侣的前世今生 的微博主页"></a>
     </div>

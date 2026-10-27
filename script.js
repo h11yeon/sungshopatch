@@ -185,6 +185,18 @@ function playErrorSound() {
   });
 }
 
+// 海报作为首页内的视图显示，不写入地址或持久化状态。
+function showPoster() {
+  if (document.getElementById("posterView")) return;
+  const frame = document.createElement("iframe");
+  frame.id = "posterView";
+  frame.title = "招募海报";
+  frame.src = "poster.html?v=32";
+  document.body.appendChild(frame);
+  document.getElementById("rotateWrap").hidden = true;
+  frame.focus();
+}
+
 // ===== 创建广告弹窗 =====
 function createAdPopup() {
   if (popupCount >= MAX_POPUPS) return;
@@ -253,7 +265,11 @@ function buildPopup(imgSrc, title) {
 
   const body = popup.querySelector(".ad-body");
   const posterLink = document.createElement("a");
-  posterLink.href = "poster.html";
+  posterLink.href = "./";
+  posterLink.addEventListener("click", event => {
+    event.preventDefault();
+    showPoster();
+  });
   posterLink.setAttribute("aria-label", "查看招募海报");
   posterLink.style.cssText = "display:block;width:100%;height:100%";
   const imgEl = imageCache.get(imgSrc).cloneNode();
