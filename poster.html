@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover" />
+  <meta name="theme-color" content="#54b0dc" />
+  <title>Join us · 招募海报</title>
+  <link rel="preload" as="image" href="assets/join-us-poster.webp?v=31" fetchpriority="high" />
+  <style>
+    * { box-sizing: border-box; }
+    html, body { margin: 0; width: 100%; height: 100%; overflow: hidden; background: #54b0dc; }
+    .poster-stage {
+      position: fixed; left: 50%; top: 50%;
+      width: 100vw; height: 100vh;
+      width: 100dvw; height: 100dvh;
+      transform: translate(-50%, -50%);
+      display: flex; align-items: center; justify-content: center;
+    }
+    .poster-frame {
+      position: relative; width: min(100vw, calc(100vh * 2480 / 3508));
+      width: min(100dvw, calc(100dvh * 2480 / 3508));
+      aspect-ratio: 2480 / 3508;
+    }
+    .weibo-link {
+      position: absolute; left: 0.6%; top: 80.4%; width: 44%; height: 5.2%;
+      z-index: 2; border-radius: 3px; cursor: pointer;
+      touch-action: manipulation;
+    }
+    .weibo-link:hover { background: rgba(255, 255, 255, 0.14); }
+    .weibo-link:focus-visible { outline: 3px solid #ffe500; outline-offset: 2px; }
+    .poster-label {
+      position: absolute; display: block; pointer-events: none;
+      animation: twinkle var(--period) ease-in-out var(--delay) infinite;
+      transform-origin: center;
+    }
+    @keyframes twinkle {
+      0%, 100% { transform: scale(0.97); }
+      50% { transform: scale(1.075); }
+    }
+    .poster {
+      display: block; width: 100%; height: 100%; object-fit: contain;
+      animation: appear 240ms ease-out;
+    }
+    @media (orientation: landscape) {
+      .poster-frame {
+        width: min(100vh, calc(100vw * 2480 / 3508));
+        width: min(100dvh, calc(100dvw * 2480 / 3508));
+      }
+      .poster-stage {
+        width: 100vh; height: 100vw;
+        width: 100dvh; height: 100dvw;
+        transform: translate(-50%, -50%) rotate(-90deg);
+      }
+    }
+    @keyframes appear { from { opacity: 0; transform: scale(.96); } to { opacity: 1; transform: scale(1); } }
+    @media (prefers-reduced-motion: reduce) { .poster, .poster-label { animation: none; } }
+  </style>
+</head>
+<body>
+  <main class="poster-stage" aria-label="招募海报">
+    <div class="poster-frame">
+    <img class="poster" src="assets/join-us-poster.webp?v=31" width="1555" height="2200"
+      alt="Join us 成将成，26.12.31—27.01.01。招募记者、48H联产、摄影、社媒运营、吃瓜路人、媒体人。急招爆料达人，一手瓜条吃到爽，没有门槛，禁止AI，速度来，名额有限。"
+      fetchpriority="high" loading="eager" />
+    <img class="poster-label" src="assets/poster-label-0.webp" alt="" aria-hidden="true" style="left:12.82258%;top:26.88141%;width:12.13710%;height:4.38997%;--period:2.60s;--delay:-0.00s" />
+    <img class="poster-label" src="assets/poster-label-1.webp" alt="" aria-hidden="true" style="left:52.37903%;top:36.11745%;width:12.29839%;height:4.41847%;--period:2.83s;--delay:-0.61s" />
+    <img class="poster-label" src="assets/poster-label-2.webp" alt="" aria-hidden="true" style="left:66.69355%;top:23.94527%;width:25.68548%;height:4.44698%;--period:3.06s;--delay:-1.22s" />
+    <img class="poster-label" src="assets/poster-label-3.webp" alt="" aria-hidden="true" style="left:14.95968%;top:70.52452%;width:17.41935%;height:4.41847%;--period:3.29s;--delay:-1.83s" />
+    <img class="poster-label" src="assets/poster-label-4.webp" alt="" aria-hidden="true" style="left:24.47581%;top:52.25200%;width:22.41935%;height:4.38997%;--period:3.52s;--delay:-2.44s" />
+    <img class="poster-label" src="assets/poster-label-5.webp" alt="" aria-hidden="true" style="left:62.37903%;top:59.92018%;width:22.25806%;height:4.41847%;--period:3.75s;--delay:-3.05s" />
+    <a class="weibo-link" href="https://weibo.com/u/4026392634"
+      aria-label="访问 @全职研究日韩情侣的前世今生 的微博主页"
+      title="访问 @全职研究日韩情侣的前世今生 的微博主页"></a>
+    </div>
+  </main>
+</body>
+</html>

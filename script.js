@@ -252,9 +252,14 @@ function buildPopup(imgSrc, title) {
   `;
 
   const body = popup.querySelector(".ad-body");
+  const posterLink = document.createElement("a");
+  posterLink.href = "poster.html";
+  posterLink.setAttribute("aria-label", "查看招募海报");
+  posterLink.style.cssText = "display:block;width:100%;height:100%";
   const imgEl = imageCache.get(imgSrc).cloneNode();
   imgEl.alt = title;
-  body.appendChild(imgEl);
+  posterLink.appendChild(imgEl);
+  body.appendChild(posterLink);
 
   // 关闭按钮：关不掉，反而跳到别的位置
   const closeBtn = popup.querySelector(".ad-close");
