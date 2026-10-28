@@ -1,4 +1,5 @@
 // ===== 配置 =====
+const posterPage = document.currentScript?.dataset.poster || "poster.html?v=33";
 const MAX_POPUPS = 15;
 
 // 广告弹窗标题池（可自行修改）
@@ -191,7 +192,7 @@ function showPoster() {
   const frame = document.createElement("iframe");
   frame.id = "posterView";
   frame.title = "招募海报";
-  frame.src = "poster.html?v=32";
+  frame.src = posterPage;
   document.body.appendChild(frame);
   document.getElementById("rotateWrap").hidden = true;
   frame.focus();
